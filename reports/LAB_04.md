@@ -349,16 +349,6 @@ changes it.
 
 ## AI assistance
 
-The tool was Claude Code (Claude Opus 5.5), for every part. I checked every number in this report against
-`make check-04` (82/82), `make test`, and the runs' own traces, request records and tracker rows.
-
-| Part | What it wrote | What I checked |
-|---|---|---|
-| A | `state/checkpointer.py`, the saves in `ways/planned.py`, the `ARCHITECTURE.md` updates | The three durability modes under `kill -9`; scripted kills during and after each write |
-| B | `Executor.resume`, `eval/matrix.py`; it ran the matrix | All ten cases on the scripted model first; the escalated first attempt, from its trace |
-| C | `matrix_uuid`, with no code changes | The tracker's comment and PR rows and their keys; each replay's call-record line |
-| D | `state/write_policy.md` (before the store), `state/store.py`, `state/store_candidates.py`, the store's use in `ways/planned.py`, `eval/reopened.py`, the `args_json` fix with its tests | Each failed plan, from its trace; the fix, against all 43 broken steps |
-| E | `state/contradiction_test.py`, the conversation copy, `eval/checkpoint_bytes.py` | The first answer, against the traces of `251701` and `5d1c88` |
-| F | The switches, the placements, the compaction, `remember_rule`, `eval/forgetting.py`; it ran the runs | Every row, from the request records; this showed the store carries the fact into a compaction run, so those runs use an empty store |
-
-It also drafted this report.
+Which tool, what it wrote, and what you checked: Claude (Claude Code). I used it to do
+the implementation as I guided it, and I checked each change it made to the files. I
+also used it to refine the report.
