@@ -17,14 +17,21 @@ FILL = "$fill"
 
 
 def step_args(step: dict) -> dict:
-    """A step's arguments, from `args` or from `args_json`."""
+    """A step's arguments, from `args` or from `args_json`. A planner sometimes escapes
+    the JSON's quotes once too often, {\\"issue\\": \\"issue-4207\\"}: that is read as the
+    object it means, unescaped once, not as no arguments (Assignment 4, Part D)."""
     if isinstance(step.get("args"), dict):
         return step["args"]
-    try:
-        args = json.loads(step.get("args_json") or "{}")
-    except (TypeError, ValueError):
-        return {}
-    return args if isinstance(args, dict) else {}
+    text = step.get("args_json") or "{}"
+    for attempt in (text, f'"{text}"'):   # as written; then as the contents of a JSON string
+        try:
+            args = json.loads(attempt)
+            if isinstance(args, str):
+                args = json.loads(args)
+        except (TypeError, ValueError):
+            continue
+        return args if isinstance(args, dict) else {}
+    return {}
 
 
 def tool_calls(trace: list[dict]) -> list[dict]:

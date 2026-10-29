@@ -1,19 +1,78 @@
 {
-  "plan_marks": [],
-  "durability": null,
-  "uncrashed_run_id": null,
-  "matrix_derived": [],
-  "matrix_uuid": [],
-  "duplicate_comment_ids": {},
-  "reopened": {
-    "with_store": {"runs": 0, "passes": 0, "mean_tool_calls": null, "mean_tokens": null, "run_ids": []},
-    "empty_store": {"runs": 0, "passes": 0, "mean_tool_calls": null, "mean_tokens": null, "run_ids": []}
+  "plan_marks": [
+    {"step": 1, "kind": "read", "checkpoint": "none"},
+    {"step": 2, "kind": "read", "checkpoint": "after"},
+    {"step": 3, "kind": "read", "checkpoint": "after"},
+    {"step": 4, "kind": "keyed_write", "checkpoint": "before"},
+    {"step": 5, "kind": "keyed_write", "checkpoint": "before"}
+  ],
+  "durability": "sync",
+  "uncrashed_run_id": "planned-4201-s01-3e110f",
+  "matrix_derived": [
+    {"run_id": "planned-4201-s01-a1a881", "step": 1, "when": "after", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-db0201", "step": 1, "when": "during", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-6045a7", "step": 2, "when": "after", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-efa8c9", "step": 2, "when": "during", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-9484ca", "step": 3, "when": "after", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-e5cafd", "step": 3, "when": "during", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-39e901", "step": 4, "when": "after", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-fb2571", "step": 4, "when": "during", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-251701", "step": 5, "when": "after", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-5d1c88", "step": 5, "when": "during", "comments": 1, "open_prs": 1, "matches": true}
+  ],
+  "matrix_uuid": [
+    {"run_id": "planned-4201-s01-bfd7ed", "step": 1, "when": "after", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-dc600c", "step": 1, "when": "during", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-690c52", "step": 2, "when": "after", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-2ac5fe", "step": 2, "when": "during", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-ca7b59", "step": 3, "when": "after", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-19de4e", "step": 3, "when": "during", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-4f90a9", "step": 4, "when": "after", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-3f06a3", "step": 4, "when": "during", "comments": 1, "open_prs": 1, "matches": true},
+    {"run_id": "planned-4201-s01-0e1ab5", "step": 5, "when": "after", "comments": 2, "open_prs": 1, "matches": false},
+    {"run_id": "planned-4201-s01-92fd40", "step": 5, "when": "during", "comments": 2, "open_prs": 1, "matches": false}
+  ],
+  "duplicate_comment_ids": {
+    "planned-4201-s01-0e1ab5": [9, 10],
+    "planned-4201-s01-92fd40": [11, 12]
   },
-  "checkpoint_bytes": {"structured": null, "with_conversation": null, "runs": 0},
-  "contradiction_test": [],
+  "reopened": {
+    "with_store": {
+      "runs": 5,
+      "passes": 5,
+      "mean_tool_calls": 5.0,
+      "mean_tokens": 13368.0,
+      "run_ids": ["planned-4207-s01-075748", "planned-4207-s02-fb1cc8", "planned-4207-s03-80a548", "planned-4207-s04-d29d17", "planned-4207-s05-956fb1"]
+    },
+    "empty_store": {
+      "runs": 5,
+      "passes": 4,
+      "mean_tool_calls": 5.0,
+      "mean_tokens": 14648.6,
+      "run_ids": ["planned-4207-s01-df78e7", "planned-4207-s02-005db8", "planned-4207-s03-2e787c", "planned-4207-s04-fcd885", "planned-4207-s05-c84b7c"]
+    }
+  },
+  "checkpoint_bytes": {"structured": 19656, "with_conversation": 99489, "runs": 3},
+  "contradiction_test": [10],
   "forgetting": {
-    "attention": {"fact": null, "effect": {}, "lost": null, "fixed": null},
-    "compaction": {"fact": null, "effect": {}, "lost": null, "fixed": null},
-    "session": {"fact": null, "effect": {}, "stated": null, "lost": null, "fixed": null}
+    "attention": {
+      "fact": "Ledgerline's maintainers label every report about the Export button feature, never bug.",
+      "effect": {"label": "feature"},
+      "lost": "planned-4192-s01-1a3ef0",
+      "fixed": "planned-4192-s01-2ab101"
+    },
+    "compaction": {
+      "fact": "Ledgerline's maintainers label every report about the Export button feature, never bug.",
+      "effect": {"label": "feature"},
+      "lost": "planned-4192-s01-e02263",
+      "fixed": "planned-4192-s01-457ea2"
+    },
+    "session": {
+      "fact": "Ledgerline's maintainers label every report about the Export button feature, never bug.",
+      "effect": {"label": "feature"},
+      "stated": "planned-4192-s01-369601",
+      "lost": "planned-4192-s01-0961a0",
+      "fixed": "planned-4192-s01-77e332"
+    }
   }
 }
